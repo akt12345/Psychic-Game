@@ -14,41 +14,31 @@
 
     // This function is run whenever the user presses a key.
      document.onkeyup = function(event) {
-    console.log (guessesSofar)
+     console.log (guessesSofar)
       // Determines which key was pressed.
       var userGuess = event.key;
       console.log (userGuess)
       console.log (computerGuess)
-      // Reworked our code from last step to use "else if" instead of lots of if statements.
+      // userGuess - wins -  if and else if statements
       if (userGuess === computerGuess){
       wins = wins +1
       console.log (wins)
       }
+
 
       else if (userGuess !== computerGuess && guessesLeft > 0){
       guessesLeft = guessesLeft -1
       guessesSofar.push(userGuess)
       }
        console.log (guessesSofar)
-      // This logic determines the outcome of the game (win/loss/guesses left, guesses so far), and increments the appropriate number
-      /*if ((userGuess === "c") || (userGuess === "a") || (userGuess === "t")) {
 
-        if ((userGuess === "r") && (computerGuess === "s")) {
-          wins++;
-        } else if ((userGuess === "r") && (computerGuess === "p")) {
-          losses++;
-        } else if ((userGuess === "s") && (computerGuess === "r")) {
-          losses++;
-        } else if ((userGuess === "s") && (computerGuess === "p")) {
-          wins++;
-        } else if ((userGuess === "p") && (computerGuess === "r")) {
-          wins++;
-        } else if ((userGuess === "p") && (computerGuess === "s")) {
-          losses++;
-        } else if (userGuess === computerGuess) {
-          ties++;
-        }
-        */
+    // userGuess -losses - if statement
+     if(userGuess !== computerGuess){
+        losses = losses +1
+      }
+      console.log (losses)
+
+
         // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/guesses left/ your guesses so far
         var html =
           "<p>You chose: " + userGuess + "</p>" +
